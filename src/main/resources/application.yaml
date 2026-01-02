@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: kafka-retry
+  main:
+    banner-mode: OFF
+  threads:
+    virtual:
+      enabled: true
+  kafka:
+    admin:
+      auto-create: false
+    listener:
+      ack-mode: manual-immediate
+      immediate-stop: true
+      observation-enabled: true
+    consumer:
+      group-id: kafka-retry-group
+      enable-auto-commit: false
+      auto-offset-reset: latest
+      max-poll-records: 10
